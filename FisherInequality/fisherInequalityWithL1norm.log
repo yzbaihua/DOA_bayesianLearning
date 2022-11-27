@@ -1,0 +1,591 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.31)  15 APR 2019 21:13
+entering extended mode
+**./fisherInequalityWithL1norm.tex
+(fisherInequalityWithL1norm.tex
+LaTeX2e <2017-04-15>
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+(umthesis.cls
+Document Class: umthesis 2003/10/16 20:20:51 1.25 U.Mass. dissertation class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (umth12pt.clo
+File: umth12pt.clo 1997/09/08 16:03:30 1.3 U.Mass. thesis (size option)
+)
+\c@count@FrontMatter=\count88
+\c@count@Chapter=\count89
+\c@count@Appendix=\count90
+\c@count@BackMatter=\count91
+\umthesis@contentshangindent=\skip43
+\tablenumberwidth=\skip44
+
+(umthstd.clo
+File: umthstd.clo 2003/10/16 20:56:33 1.12 U.Mass. thesis frontmatter option
+)
+\umthesis@basefootnotesep=\skip45
+\umthesis@baseskipfootins=\skip46
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count92
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip47
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen105
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen106
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count93
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count94
+\leftroot@=\count95
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count96
+\DOTSCASE@=\count97
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen107
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count98
+\c@MaxMatrixCols=\count99
+\dotsspace@=\muskip10
+\c@parentequation=\count100
+\dspbrk@lvl=\count101
+\tag@help=\toks16
+\row@=\count102
+\column@=\count103
+\maxfields@=\count104
+\andhelp@=\toks17
+\eqnshift@=\dimen108
+\alignsep@=\dimen109
+\tagshift@=\dimen110
+\tagwidth@=\dimen111
+\totwidth@=\dimen112
+\lineht@=\dimen113
+\@envbody=\toks18
+\multlinegap=\skip48
+\multlinetaggap=\skip49
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count105
+\float@exts=\toks20
+\float@box=\box28
+\@float@everytoks=\toks21
+\@floatcapt=\box29
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen114
+\epsfysize=\dimen115
+)
+(fisherInequalityWithL1norm.aux)
+\openout1 = `fisherInequalityWithL1norm.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count106
+\scratchdimen=\dimen116
+\scratchbox=\box30
+\nofMPsegments=\count107
+\nofMParguments=\count108
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count109
+\MPscratchDim=\dimen117
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
+\everyMPtoPDFconversion=\toks23
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 19.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 19.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{C:/Users/Hua Bai/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
+Package epstopdf Info: Source file: <./results/noise_effect_15db_normal.eps>
+(epstopdf)                    date: 2018-11-12 15:17:03
+(epstopdf)                    size: 37389 bytes
+(epstopdf)             Output file: <./results/noise_effect_15db_normal-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2018-11-12 15:18:47
+(epstopdf)                    size: 6821 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/noise_effect_15db
+_normal-eps-converted-to.pdf ./results/noise_effect_15db_normal.eps>
+(epstopdf)             \includegraphics on input line 171.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/noise_effect_15db_normal-eps-converted-to.pdf, id=25, 421.575pt x 31
+6.18124pt>
+File: ./results/noise_effect_15db_normal-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use ./results/noise_effect_15db_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/noise_effect_15db_normal-eps-converted-to.pd
+f used on input line 171.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+
+[4]
+Package epstopdf Info: Source file: <./results/noise_effect_20db_normal.eps>
+(epstopdf)                    date: 2018-11-12 15:17:17
+(epstopdf)                    size: 37390 bytes
+(epstopdf)             Output file: <./results/noise_effect_20db_normal-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2018-11-12 15:18:48
+(epstopdf)                    size: 6796 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/noise_effect_20db
+_normal-eps-converted-to.pdf ./results/noise_effect_20db_normal.eps>
+(epstopdf)             \includegraphics on input line 178.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/noise_effect_20db_normal-eps-converted-to.pdf, id=29, 421.575pt x 31
+6.18124pt>
+File: ./results/noise_effect_20db_normal-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use ./results/noise_effect_20db_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/noise_effect_20db_normal-eps-converted-to.pd
+f used on input line 178.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+Package epstopdf Info: Source file: <./results/noise_effect_25db_normal.eps>
+(epstopdf)                    date: 2018-11-12 15:17:33
+(epstopdf)                    size: 37388 bytes
+(epstopdf)             Output file: <./results/noise_effect_25db_normal-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2018-11-12 15:18:49
+(epstopdf)                    size: 6740 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/noise_effect_25db
+_normal-eps-converted-to.pdf ./results/noise_effect_25db_normal.eps>
+(epstopdf)             \includegraphics on input line 185.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/noise_effect_25db_normal-eps-converted-to.pdf, id=30, 421.575pt x 31
+6.18124pt>
+File: ./results/noise_effect_25db_normal-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use ./results/noise_effect_25db_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/noise_effect_25db_normal-eps-converted-to.pd
+f used on input line 185.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+
+[5 <./results/noise_effect_15db_normal-eps-converted-to.pdf> <./results/noise_e
+ffect_20db_normal-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./results/noise_effect_30db_normal.eps>
+(epstopdf)                    date: 2018-11-12 15:17:44
+(epstopdf)                    size: 37390 bytes
+(epstopdf)             Output file: <./results/noise_effect_30db_normal-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2018-11-12 15:18:49
+(epstopdf)                    size: 6683 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/noise_effect_30db
+_normal-eps-converted-to.pdf ./results/noise_effect_30db_normal.eps>
+(epstopdf)             \includegraphics on input line 192.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/noise_effect_30db_normal-eps-converted-to.pdf, id=40, 421.575pt x 31
+6.18124pt>
+File: ./results/noise_effect_30db_normal-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use ./results/noise_effect_30db_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/noise_effect_30db_normal-eps-converted-to.pd
+f used on input line 192.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+Package epstopdf Info: Source file: <./results/change_of_source_with_sigma.eps>
+
+(epstopdf)                    date: 2018-11-14 14:12:03
+(epstopdf)                    size: 42222 bytes
+(epstopdf)             Output file: <./results/change_of_source_with_sigma-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2018-11-14 14:14:41
+(epstopdf)                    size: 6993 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/change_of_source_
+with_sigma-eps-converted-to.pdf ./results/change_of_source_with_sigma.eps>
+(epstopdf)             \includegraphics on input line 203.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/change_of_source_with_sigma-eps-converted-to.pdf, id=41, 421.575pt x
+ 316.18124pt>
+File: ./results/change_of_source_with_sigma-eps-converted-to.pdf Graphic file (
+type pdf)
+ <use ./results/change_of_source_with_sigma-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/change_of_source_with_sigma-eps-converted-to
+.pdf used on input line 203.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+
+[6 <./results/noise_effect_25db_normal-eps-converted-to.pdf> <./results/noise_e
+ffect_30db_normal-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./results/element_effect_6_normal.eps>
+(epstopdf)                    date: 2018-11-12 21:55:26
+(epstopdf)                    size: 37363 bytes
+(epstopdf)             Output file: <./results/element_effect_6_normal-eps-conv
+erted-to.pdf>
+(epstopdf)                    date: 2018-11-12 21:56:27
+(epstopdf)                    size: 6564 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/element_effect_6_
+normal-eps-converted-to.pdf ./results/element_effect_6_normal.eps>
+(epstopdf)             \includegraphics on input line 212.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/element_effect_6_normal-eps-converted-to.pdf, id=51, 421.575pt x 316
+.18124pt>
+File: ./results/element_effect_6_normal-eps-converted-to.pdf Graphic file (type
+ pdf)
+ <use ./results/element_effect_6_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/element_effect_6_normal-eps-converted-to.pdf
+ used on input line 212.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+Package epstopdf Info: Source file: <./results/element_effect_9_normal.eps>
+(epstopdf)                    date: 2018-11-12 21:55:34
+(epstopdf)                    size: 37386 bytes
+(epstopdf)             Output file: <./results/element_effect_9_normal-eps-conv
+erted-to.pdf>
+(epstopdf)                    date: 2018-11-12 21:56:28
+(epstopdf)                    size: 6821 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/element_effect_9_
+normal-eps-converted-to.pdf ./results/element_effect_9_normal.eps>
+(epstopdf)             \includegraphics on input line 219.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/element_effect_9_normal-eps-converted-to.pdf, id=52, 421.575pt x 316
+.18124pt>
+File: ./results/element_effect_9_normal-eps-converted-to.pdf Graphic file (type
+ pdf)
+ <use ./results/element_effect_9_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/element_effect_9_normal-eps-converted-to.pdf
+ used on input line 219.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+ [7 <./results/change_of_source_with_sigma-eps-converted-to.pdf> <./results/ele
+ment_effect_6_normal-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./results/element_effect_12_normal.eps>
+(epstopdf)                    date: 2018-11-12 21:55:54
+(epstopdf)                    size: 37390 bytes
+(epstopdf)             Output file: <./results/element_effect_12_normal-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2018-11-12 21:56:28
+(epstopdf)                    size: 6783 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/element_effect_12
+_normal-eps-converted-to.pdf ./results/element_effect_12_normal.eps>
+(epstopdf)             \includegraphics on input line 226.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/element_effect_12_normal-eps-converted-to.pdf, id=63, 421.575pt x 31
+6.18124pt>
+File: ./results/element_effect_12_normal-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use ./results/element_effect_12_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/element_effect_12_normal-eps-converted-to.pd
+f used on input line 226.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+Package epstopdf Info: Source file: <./results/element_effect_15_normal.eps>
+(epstopdf)                    date: 2018-11-12 21:56:05
+(epstopdf)                    size: 37389 bytes
+(epstopdf)             Output file: <./results/element_effect_15_normal-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2018-11-12 21:56:29
+(epstopdf)                    size: 6815 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/element_effect_15
+_normal-eps-converted-to.pdf ./results/element_effect_15_normal.eps>
+(epstopdf)             \includegraphics on input line 233.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/element_effect_15_normal-eps-converted-to.pdf, id=64, 421.575pt x 31
+6.18124pt>
+File: ./results/element_effect_15_normal-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use ./results/element_effect_15_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/element_effect_15_normal-eps-converted-to.pd
+f used on input line 233.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+
+[8 <./results/element_effect_9_normal-eps-converted-to.pdf> <./results/element_
+effect_12_normal-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./results/snapshot_effect_5_normal.eps>
+(epstopdf)                    date: 2018-11-12 22:17:53
+(epstopdf)                    size: 37390 bytes
+(epstopdf)             Output file: <./results/snapshot_effect_5_normal-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2018-11-12 22:21:37
+(epstopdf)                    size: 6777 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/snapshot_effect_5
+_normal-eps-converted-to.pdf ./results/snapshot_effect_5_normal.eps>
+(epstopdf)             \includegraphics on input line 244.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/snapshot_effect_5_normal-eps-converted-to.pdf, id=74, 421.575pt x 31
+6.18124pt>
+File: ./results/snapshot_effect_5_normal-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use ./results/snapshot_effect_5_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/snapshot_effect_5_normal-eps-converted-to.pd
+f used on input line 244.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+Package epstopdf Info: Source file: <./results/snapshot_effect_10_normal.eps>
+(epstopdf)                    date: 2018-11-12 22:18:24
+(epstopdf)                    size: 37389 bytes
+(epstopdf)             Output file: <./results/snapshot_effect_10_normal-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2018-11-12 22:21:38
+(epstopdf)                    size: 6794 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/snapshot_effect_1
+0_normal-eps-converted-to.pdf ./results/snapshot_effect_10_normal.eps>
+(epstopdf)             \includegraphics on input line 251.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/snapshot_effect_10_normal-eps-converted-to.pdf, id=75, 421.575pt x 3
+16.18124pt>
+File: ./results/snapshot_effect_10_normal-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+ <use ./results/snapshot_effect_10_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/snapshot_effect_10_normal-eps-converted-to.p
+df used on input line 251.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+
+[9 <./results/element_effect_15_normal-eps-converted-to.pdf> <./results/snapsho
+t_effect_5_normal-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./results/snapshot_effect_25_normal.eps>
+(epstopdf)                    date: 2018-11-12 22:18:35
+(epstopdf)                    size: 37393 bytes
+(epstopdf)             Output file: <./results/snapshot_effect_25_normal-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2018-11-12 22:21:38
+(epstopdf)                    size: 6740 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/snapshot_effect_2
+5_normal-eps-converted-to.pdf ./results/snapshot_effect_25_normal.eps>
+(epstopdf)             \includegraphics on input line 258.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/snapshot_effect_25_normal-eps-converted-to.pdf, id=85, 421.575pt x 3
+16.18124pt>
+File: ./results/snapshot_effect_25_normal-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+ <use ./results/snapshot_effect_25_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/snapshot_effect_25_normal-eps-converted-to.p
+df used on input line 258.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+Package epstopdf Info: Source file: <./results/snapshot_effect_50_normal.eps>
+(epstopdf)                    date: 2018-11-12 22:19:05
+(epstopdf)                    size: 37396 bytes
+(epstopdf)             Output file: <./results/snapshot_effect_50_normal-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2018-11-12 22:21:39
+(epstopdf)                    size: 6733 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/snapshot_effect_5
+0_normal-eps-converted-to.pdf ./results/snapshot_effect_50_normal.eps>
+(epstopdf)             \includegraphics on input line 265.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/snapshot_effect_50_normal-eps-converted-to.pdf, id=86, 421.575pt x 3
+16.18124pt>
+File: ./results/snapshot_effect_50_normal-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+ <use ./results/snapshot_effect_50_normal-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/snapshot_effect_50_normal-eps-converted-to.p
+df used on input line 265.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+
+[10 <./results/snapshot_effect_10_normal-eps-converted-to.pdf> <./results/snaps
+hot_effect_25_normal-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./results/change_of_sigma_square_L_10.eps>
+
+(epstopdf)                    date: 2018-11-14 11:56:38
+(epstopdf)                    size: 43030 bytes
+(epstopdf)             Output file: <./results/change_of_sigma_square_L_10-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2018-11-14 12:01:01
+(epstopdf)                    size: 6626 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/change_of_sigma_s
+quare_L_10-eps-converted-to.pdf ./results/change_of_sigma_square_L_10.eps>
+(epstopdf)             \includegraphics on input line 277.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/change_of_sigma_square_L_10-eps-converted-to.pdf, id=96, 421.575pt x
+ 316.18124pt>
+File: ./results/change_of_sigma_square_L_10-eps-converted-to.pdf Graphic file (
+type pdf)
+ <use ./results/change_of_sigma_square_L_10-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/change_of_sigma_square_L_10-eps-converted-to
+.pdf used on input line 277.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+Package epstopdf Info: Source file: <./results/change_of_sigma_square_L_50.eps>
+
+(epstopdf)                    date: 2018-11-14 12:27:42
+(epstopdf)                    size: 43018 bytes
+(epstopdf)             Output file: <./results/change_of_sigma_square_L_50-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2018-11-14 12:27:51
+(epstopdf)                    size: 6636 bytes
+(epstopdf)             Command: <epstopdf --outfile=./results/change_of_sigma_s
+quare_L_50-eps-converted-to.pdf ./results/change_of_sigma_square_L_50.eps>
+(epstopdf)             \includegraphics on input line 284.
+Package epstopdf Info: Output file is already uptodate.
+
+<./results/change_of_sigma_square_L_50-eps-converted-to.pdf, id=97, 421.575pt x
+ 316.18124pt>
+File: ./results/change_of_sigma_square_L_50-eps-converted-to.pdf Graphic file (
+type pdf)
+ <use ./results/change_of_sigma_square_L_50-eps-converted-to.pdf>
+Package pdftex.def Info: ./results/change_of_sigma_square_L_50-eps-converted-to
+.pdf used on input line 284.
+(pdftex.def)             Requested size: 260.17464pt x 195.13298pt.
+
+[11 <./results/snapshot_effect_50_normal-eps-converted-to.pdf> <./results/chang
+e_of_sigma_square_L_10-eps-converted-to.pdf>]
+No file fisherInequalityWithL1norm.bbl.
+[12 <./results/change_of_sigma_square_L_50-eps-converted-to.pdf>]
+(fisherInequalityWithL1norm.aux) ) 
+Here is how much of TeX's memory you used:
+ 2591 strings out of 493328
+ 38363 string characters out of 3139116
+ 103208 words of memory out of 3000000
+ 6053 multiletter control sequences out of 15000+200000
+ 11054 words of font info for 41 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 39i,13n,25p,523b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmbx6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+bx8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on fisherInequalityWithL1norm.pdf (12 pages, 230983 bytes).
+PDF statistics:
+ 157 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+
