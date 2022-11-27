@@ -1,0 +1,328 @@
+% we used the bayesian compressive sensing method to recover the incident
+% signal from the noised measurements
+
+% Here we assume there are three clusters which are seperated by deltaDis(the
+% default value is 100 lambda)
+
+% The parameters you can modify are :
+% 1) signal: the strength of the sources (complex column vector)
+% 2) SNR: signal to noise ratio
+% 3) signalAngle: the angles of the sources
+% 4) snapshotNumber
+snapshotNumberSet = 100;
+SNRSet= [10];
+clearvars -except snapshotNumberSet SNRSet;
+for noiseIdx = 1 : length(SNRSet)
+    for snapshotNumberIdx = 1 : length(snapshotNumberSet)
+        
+        frequency=300e6;
+        c=3e8;
+        lambda=c/frequency;
+        spacing=0.5*lambda;
+        % signal to noise ratio, we define it by SNR = max(signal)/noise
+        SNR=SNRSet(noiseIdx);
+        
+        signal=[sqrt(2)*exp(1i*pi/4);sqrt(2)*exp(1i*pi/4);sqrt(2)*exp(1i*pi/4)]; % the signal
+        % signal=1.5*exp(1i*1.45); % the signal
+        
+        signalVector=[real(signal);imag(signal)];
+        % signalAngle=-20.5;%,-45,15,50]; % the angle of the signal
+        
+        N_discrete=181; % the number of the possible angles
+        possibleTheta=linspace(-90,90,N_discrete);
+        
+        % loc=([-8,-7,-3,-1.5,0,2,3.5,6,7,10]+8)*spacing; % the unit is lambda/2
+        avgRecValueMean = zeros(2*N_discrete,1);
+        avgRecValueSD = zeros(2*N_discrete,1);
+        avgRecNoiseVariance = 0;
+        snapshotNumber = snapshotNumberSet(snapshotNumberIdx);
+        antennaNumber = 9;
+        
+        time_l2_total = 0;time_l1_total = 0;time_l1_pair_total = 0;
+        meanSquareError_L2norm_total = 0; meanSquareError_L1norm_total = 0; meanSquareError_L1normPair_total = 0;
+        sparsity_L1normPair_total = 0; sparsity_L1norm_total = 0; sparsity_L2norm_total = 0;
+        testNum = 1;
+        for t = 1 : testNum
+            entireMeasurementMatrix = [];yWithNoise =[];
+            signalAngle=randi([-90,90],1,3);%,-45,15,50]; % the an
+%             signalAngle=[-90, -85, 90];
+            GM = {};
+            GM{snapshotNumber+1} = zeros(181);
+            for i = 1 : snapshotNumber
+                % loctaions contains three clusters, the clusters are seperated by 100
+                % lambda, and each cluster has three points, the locations are generated
+                % randomly
+                % rng('default')
+                % cluster configuration
+%                 deltaDis = 103*lambda;
+%                 loc =[3*rand(1,3), 3*rand(1,3)+deltaDis, 3*rand(1,3)+2*deltaDis,3*rand(1,3)+3*deltaDis];
+                
+%                 general random array
+                deltaDis = 24*lambda;
+                for antennaIdx = 1 : antennaNumber
+                    if antennaIdx == 1
+                        loc = 6*lambda*rand;
+                    else
+                        loc = [loc,6*lambda*rand + (antennaIdx-1)*deltaDis];
+                    end
+                end
+                
+                N_element=length(loc); % the number of the elements in the array
+                
+                % the measurement matrix contains the entrie potential angles
+                measurementMatrix = exp(-1i*loc'*2*pi*sind(possibleTheta)/lambda);
+                
+                
+
+                % covert it to the real number form
+                entireMeasurementMatrix{i} = ...
+                    [real(measurementMatrix),-imag(measurementMatrix);imag(measurementMatrix),real(measurementMatrix)];
+
+                % plot gram matrx
+                GM{i} = (measurementMatrix'*measurementMatrix);
+                GM{snapshotNumber+1} = GM{snapshotNumber+1}+GM{i};
+                
+                % we want to check the effect of position of elements to estimated results.
+                normObs = entireMeasurementMatrix{i};
+                prodObs = normObs'*normObs;
+                sumDiag = sum(diag(prodObs/norm(prodObs))); % !!! accuracy is proportional to that
+                
+                
+                % to get the actual received signal
+                actualMeasurementMatrix = exp(-1i*loc'*2*pi*sind(signalAngle)/lambda);
+                yPure = actualMeasurementMatrix * signal; % the received signal without noise, complex numbers
+                yPureVector = [real(yPure);imag(yPure)]; % real numbers form
+                yMaxElement = max(yPure); % the maxmium received signal is picked up for the SNR
+                
+                
+                % calculate lower bound
+                
+                
+                
+                % to control the noise
+                % rng('default');
+                % rng(1);
+                [~,sigma] = my_awgn(ones(N_element,1)*yMaxElement,SNR);
+                sigmaSquare = sigma^2; % the variance of the noise
+                
+                noise = my_awgn(ones(N_element,1)*yMaxElement,SNR)-ones(N_element,1)*yMaxElement; % complex numbers
+                yWithNoiseComplex = yPure + noise;
+                noiseVector = [real(noise);imag(noise)]; % real numbers form
+                yWithNoise{i} = yPureVector + noiseVector;
+            end
+            
+            % plot gram matrx
+            figure()
+            xaxis = [-90, 90];
+            yaxis = [-90, 90];
+            imagesc(xaxis,yaxis, abs(GM{1})/N_element),axis square,pause(0.1);
+            c = colorbar;
+            c.Label.String = 'Mangnitude';
+            xlabel('\theta');
+            ylabel('\theta');
+            figure()
+            imagesc(xaxis,yaxis,abs(GM{snapshotNumber+1})/snapshotNumber/N_element),axis square,pause(0.1);
+            c = colorbar;
+            c.Label.String = 'Mangnitude';
+            xlabel('\theta');
+            ylabel('\theta');
+            % [time,recWeights,recIndex,~,recSD] = l1_norm_doa_single_v2(entireMeasurementMatrix,yWithNoise,1e-6);
+            % ---------
+            [time_l2,recWeights,recIndex,~,recSD] = multiTaskBCS_Hua_alpha0(entireMeasurementMatrix,yWithNoise,1e-6);
+            initsigma2 = var(yWithNoise{1})*0.01;
+            lambdaL1Norm = [];
+            [time_l1_pair,recWeights_l1_pair,recIndex_l1_pair,sigma2_l1_pair,recSD_l1_pair,basis_l1_pair,selected_l1_pair,alpha_l1_pair,lambdas_l1_pair] = MultiTaskFastLaplacePair(entireMeasurementMatrix,yWithNoise,initsigma2,1e-6,lambdaL1Norm);
+            [time_l1,recWeights_l1,recIndex_l1,sigma2_l1,recSD_l1,basis_l1,selected_l1,alpha_l1,lambdas_l1] = MultiTaskFastLaplace(entireMeasurementMatrix,yWithNoise,initsigma2,1e-6,lambdaL1Norm);
+            time_l2_total = time_l2_total + time_l2;
+            time_l1_total = time_l1_total + time_l1;
+            time_l1_pair_total = time_l1_pair_total + time_l1_pair;
+            
+            % calculate mean squared error
+            N = 181;
+            trueSignal = zeros(N,1);
+            trueSignal(signalAngle + 91) = signal;
+            
+            l2Siganl = mean(recWeights,2);
+            l2SiganlComplex = l2Siganl(1:N,:)+1i*l2Siganl(N+1:end,:);
+            meanSquareError_L2norm_total = meanSquareError_L2norm_total + immse(trueSignal,l2SiganlComplex);
+            sparsity_L2norm_total = sparsity_L2norm_total +  nnz(l2SiganlComplex);
+            
+            l1Siganl = mean(recWeights_l1,2);
+            l1SiganlComplex = l1Siganl(1:N,:)+1i*l1Siganl(N+1:end,:);
+            meanSquareError_L1norm_total = meanSquareError_L1norm_total + immse(trueSignal,l1SiganlComplex);
+            sparsity_L1norm_total = sparsity_L1norm_total +  nnz(l1SiganlComplex);
+            
+            l1SiganlPair = mean(recWeights_l1_pair,2);
+            l1SiganlPairComplex = l1SiganlPair(1:N,:)+1i*l1SiganlPair(N+1:end,:);
+            meanSquareError_L1normPair_total = meanSquareError_L1normPair_total + immse(trueSignal,l1SiganlPairComplex);
+            sparsity_L1normPair_total = sparsity_L1normPair_total +  nnz(l1SiganlPairComplex);
+            
+        end
+        % Lambda = []; % Laplace priors with lambda calculated adaptively (see [1])
+%         [recWeights,recIndex,sigma2,recSD,basis,selected,alpha,lambdas] = FastLaplace(entireMeasurementMatrix{1},yWithNoise{1},initsigma2,1e-4,lambda);
+        timel2norm(noiseIdx,snapshotNumberIdx) = time_l2_total/testNum;
+        sparsityl2norm(noiseIdx,snapshotNumberIdx) = sparsity_L2norm_total/testNum;
+        msel2norm(noiseIdx,snapshotNumberIdx) = meanSquareError_L2norm_total/testNum;
+        timel1norm(noiseIdx,snapshotNumberIdx) = time_l1_total/testNum;
+        sparsityl1norm(noiseIdx,snapshotNumberIdx) = sparsity_L1norm_total/testNum;
+        msel1norm(noiseIdx,snapshotNumberIdx) = meanSquareError_L1norm_total/testNum;
+        timel1normpair(noiseIdx,snapshotNumberIdx) = time_l1_pair_total/testNum;
+        sparsityl1normpair(noiseIdx,snapshotNumberIdx) = sparsity_L1normPair_total/testNum;
+        msel1normpair(noiseIdx,snapshotNumberIdx) = meanSquareError_L1normPair_total/testNum;
+        fprintf(1,'time : %d \n',time_l2_total/testNum)
+        fprintf(1,'sparsity : %d \n',sparsity_L1normPair_total/testNum)
+        fprintf(1,'error : %d \n',meanSquareError_L1normPair_total/testNum)
+        fprintf(1,'SNR : %d \n',SNR)
+        fprintf(1,'SnapshotNumber : %d \n',snapshotNumber)
+    end
+end
+l2NormResult.time = timel2norm;
+l2NormResult.sparsity = sparsityl2norm;
+l2NormResult.mse = msel2norm;
+save('l2normResultClusterSingleSnapshot.mat','l2NormResult');
+l1NormResult.time = timel1norm;
+l1NormResult.sparsity = sparsityl1norm;
+l1NormResult.mse = msel1norm;
+save('l1normResultClusterSingleSnapshot.mat','l1NormResult');
+l1NormPairResult.time = timel1normpair;
+l1NormPairResult.sparsity = sparsityl1normpair;
+l1NormPairResult.mse = msel1normpair;
+save('l1normpairResultSingleSnapshot.mat','l1NormPairResult');
+
+color = [1 0 0; 0 1 0; 0 0 1; 0 1 1];
+recIndexCopy = recIndex;
+recIndexCopy(recIndex > N_discrete) = recIndex(recIndex > N_discrete) - N_discrete;
+pairAngle = unique(recIndexCopy);
+pairPowerSD = zeros(N_discrete,1);
+for i = 1 : length(pairAngle)
+    if isempty(find(recIndex == pairAngle(i)))
+        pairReal = 0;
+    else
+        pairReal = recSD(recIndex == pairAngle(i));
+    end
+    if isempty(find(recIndex == (pairAngle(i) + N_discrete)))
+        pairImag = 0;
+    else
+        pairImag = recSD(recIndex == (pairAngle(i) + N_discrete));
+    end
+    pairPowerSD(pairAngle(i)) = pairReal^2 + pairImag^2;
+end
+recWeightsAvg = mean(recWeights,2);
+pairPower = recWeightsAvg(1:N_discrete).^2 + recWeightsAvg(N_discrete+1:end).^2;
+pairIdx = find(pairPower > 0);
+% plot error bar
+% h = errorbar(pairIdx-91,pairPower(pairIdx),...
+%     pairPowerSD(pairIdx),'o','MarkerSize',5);
+% h.CapSize = 10;
+% plot mean value
+h = plot(pairIdx-91,pairPower(pairIdx),'o','MarkerSize',6,'Color','red');
+hold on;
+% the true signal power
+for i = 1 :length(signal)
+    fh{i} = plot(signalAngle(i),abs(signal(i))^2,'*','LineWidth',1.5,'color',color(2,:)...
+        ,'MarkerSize',10);
+end
+xlim([-95,95]);
+ylim([0,4]);
+xlabel('angle(theta)');
+ylabel('signal strength, abs(s_{i})^{2}');
+lg = legend('reconstructed signal','true signal');
+hold off;
+set(gca,'fontsize',16)
+lg.FontSize = 14;
+hold off;
+% end of plotting resuls
+
+% pairwise l1-norm
+figure()
+color = [1 0 0; 0 1 0; 0 0 1; 0 1 1];
+recIndexCopy = recIndex_l1_pair;
+recIndexCopy(recIndex_l1_pair > N_discrete) = recIndex_l1_pair(recIndex_l1_pair > N_discrete) - N_discrete;
+pairAngle = unique(recIndexCopy);
+pairPowerSD = zeros(N_discrete,1);
+for i = 1 : length(pairAngle)
+    if isempty(find(recIndex_l1_pair == pairAngle(i)))
+        pairReal = 0;
+    else
+        pairReal = recSD_l1_pair(recIndex_l1_pair == pairAngle(i));
+    end
+    if isempty(find(recIndex_l1_pair == (pairAngle(i) + N_discrete)))
+        pairImag = 0;
+    else
+        pairImag = recSD_l1_pair(recIndex_l1_pair == (pairAngle(i) + N_discrete));
+    end
+    pairPowerSD(pairAngle(i)) = pairReal^2 + pairImag^2;
+end
+recWeightsAvg = mean(recWeights_l1_pair,2);
+pairPower = recWeightsAvg(1:N_discrete).^2 + recWeightsAvg(N_discrete+1:end).^2;
+pairIdx = find(pairPower > 0);
+% plot error bar
+h = errorbar(pairIdx-91,pairPower(pairIdx),...
+    pairPowerSD(pairIdx),'o','MarkerSize',5);
+h.CapSize = 10;
+% plot mean value
+h = plot(pairIdx-91,pairPower(pairIdx),'o','MarkerSize',6,'Color','red');
+hold on;
+% the true signal power
+for i = 1 :length(signal)
+    fh{i} = plot(signalAngle(i),abs(signal(i))^2+0.5,'*','LineWidth',1.5,'color',color(2,:)...
+        ,'MarkerSize',10);
+end
+xlim([-95,95]);
+ylim([0,4]);
+xlabel('\theta');
+ylabel('signal strength, abs(s_{i})^{2}');
+lg = legend('Estimated signal','True signal');
+hold off;
+set(gca,'fontsize',16)
+lg.FontSize = 14;
+hold off;
+grid on
+% end of plotting resuls
+
+% normal l1-norm
+figure()
+color = [1 0 0; 0 1 0; 0 0 1; 0 1 1];
+recIndexCopy = recIndex_l1;
+recIndexCopy(recIndex_l1 > N_discrete) = recIndex_l1(recIndex_l1 > N_discrete) - N_discrete;
+pairAngle = unique(recIndexCopy);
+pairPowerSD = zeros(N_discrete,1);
+for i = 1 : length(pairAngle)
+    if isempty(find(recIndex_l1 == pairAngle(i)))
+        pairReal = 0;
+    else
+        pairReal = recSD_l1(recIndex_l1 == pairAngle(i));
+    end
+    if isempty(find(recIndex_l1 == (pairAngle(i) + N_discrete)))
+        pairImag = 0;
+    else
+        pairImag = recSD_l1(recIndex_l1 == (pairAngle(i) + N_discrete));
+    end
+    pairPowerSD(pairAngle(i)) = pairReal^2 + pairImag^2;
+end
+recWeightsAvg = mean(recWeights_l1,2);
+pairPower = recWeightsAvg(1:N_discrete).^2 + recWeightsAvg(N_discrete+1:end).^2;
+pairIdx = find(pairPower > 0);
+% plot error bar
+% h = errorbar(pairIdx-91,pairPower(pairIdx),...
+%     pairPowerSD(pairIdx),'o','MarkerSize',5);
+% h.CapSize = 10;
+% plot mean value
+h = plot(pairIdx-91,pairPower(pairIdx),'o','MarkerSize',6,'Color','red');
+hold on;
+% the true signal power
+for i = 1 :length(signal)
+    fh{i} = plot(signalAngle(i),abs(signal(i))^2,'*','LineWidth',1.5,'color',color(2,:)...
+        ,'MarkerSize',10);
+end
+xlim([-95,95]);
+ylim([0,4]);
+xlabel('angle(theta)');
+ylabel('signal strength, abs(s_{i})^{2}');
+lg = legend('reconstructed signal','true signal');
+set(gca,'fontsize',16)
+lg.FontSize = 14;
+hold off;
+% end of plotting resuls
+
+
